@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "UserProfile"
-include ':app'
+include(":app")
