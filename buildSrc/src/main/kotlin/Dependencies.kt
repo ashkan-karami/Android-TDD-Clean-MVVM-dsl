@@ -1,3 +1,9 @@
+object Plugins{
+    const val androidApplication = "com.android.application"
+    const val androidLibrary = "com.android.library"
+    const val kotlin = "org.jetbrains.kotlin.android"
+}
+
 object Libs{
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
@@ -19,6 +25,5 @@ object AndroidTestLibs{
     const val extJunitKtx = "androidx.test.ext:junit-ktx:${Versions.extJunit}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     const val testRunner = "androidx.test:runner:${Versions.testRunner}"
-    //const val barista = "com.adevinta.android:barista:${Versions.barista}"
-
+    const val barista = "com.adevinta.android:barista:${Versions.barista}"
 }

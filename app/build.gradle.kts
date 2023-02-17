@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id(Plugins.androidApplication)
     kotlin("android")
 }
 
@@ -7,7 +7,7 @@ android {
     compileSdk = AppConfig.compileSdk
 
     defaultConfig {
-        applicationId = "com.ashkan.userprofile"
+        applicationId = AppConfig.applicationId
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
         versionCode = AppConfig.versionCode
@@ -36,12 +36,23 @@ android {
 
 dependencies {
 
-    implementation(Libs)
+    implementation(Libs.coreKtx)
+    implementation(Libs.appcompat)
+    implementation(Libs.material)
+    implementation(Libs.constraintLayout)
+    implementation(Libs.espressoIdlingResource)
 
-    testImplementation(TestLibs)
+    testImplementation(TestLibs.junit)
+    testImplementation(TestLibs.mockito)
+    testImplementation(TestLibs.mockitoKotlin)
+    testImplementation(TestLibs.mockitoInline)
+    testImplementation(TestLibs.coreTesting)
 
-    androidTestImplementation(AndroidTestLibs)
-    androidTestImplementation("com.adevinta.android:barista:4.2.0") {
+    androidTestImplementation(AndroidTestLibs.extJunit)
+    androidTestImplementation(AndroidTestLibs.extJunitKtx)
+    androidTestImplementation(AndroidTestLibs.espresso)
+    androidTestImplementation(AndroidTestLibs.testRunner)
+    androidTestImplementation(AndroidTestLibs.barista) {
         exclude(group = "org.jetbrains.kotlin")
         exclude(group = "androidx.legacy", module= "legacy-support-core-utils")
     }
