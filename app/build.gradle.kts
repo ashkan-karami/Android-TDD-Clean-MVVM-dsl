@@ -1,6 +1,8 @@
 plugins {
     id(Plugins.androidApplication)
     kotlin("android")
+    id("kotlin-kapt")
+    id(Plugins.hilt)
 }
 
 android {
@@ -41,6 +43,10 @@ dependencies {
     implementation(Libs.material)
     implementation(Libs.constraintLayout)
     implementation(Libs.espressoIdlingResource)
+
+    // Hilt-library
+    implementation(Libs.hilt)
+    kapt(Kapt.hilt)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockito)

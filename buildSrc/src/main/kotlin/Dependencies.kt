@@ -2,6 +2,7 @@ object Plugins{
     const val androidApplication = "com.android.application"
     const val androidLibrary = "com.android.library"
     const val kotlin = "org.jetbrains.kotlin.android"
+    const val hilt = "com.google.dagger.hilt.android"
 }
 
 object Libs{
@@ -10,6 +11,7 @@ object Libs{
     const val material = "com.google.android.material:material:${Versions.material}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val espressoIdlingResource = "androidx.test.espresso:espresso-idling-resource:${Versions.espressoIdlingResource}"
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
 }
 
 object TestLibs{
@@ -26,4 +28,8 @@ object AndroidTestLibs{
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     const val testRunner = "androidx.test:runner:${Versions.testRunner}"
     const val barista = "com.adevinta.android:barista:${Versions.barista}"
+}
+
+object Kapt{
+    const val hilt = "com.google.dagger:hilt-compiler:${Versions.hilt}"
 }
