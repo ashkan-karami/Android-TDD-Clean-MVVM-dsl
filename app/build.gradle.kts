@@ -43,6 +43,7 @@ dependencies {
     implementation(Libs.material)
     implementation(Libs.constraintLayout)
     implementation(Libs.espressoIdlingResource)
+    implementation(Libs.viewModel)
 
     // Hilt-library
     implementation(Libs.hilt)

@@ -12,6 +12,7 @@ object Libs{
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val espressoIdlingResource = "androidx.test.espresso:espresso-idling-resource:${Versions.espressoIdlingResource}"
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
 }
 
 object TestLibs{
