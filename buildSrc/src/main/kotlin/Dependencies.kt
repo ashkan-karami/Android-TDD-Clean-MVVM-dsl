@@ -13,6 +13,8 @@ object Libs{
     const val espressoIdlingResource = "androidx.test.espresso:espresso-idling-resource:${Versions.espressoIdlingResource}"
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
+    const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
 }
 
 object TestLibs{
@@ -21,6 +23,7 @@ object TestLibs{
     const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.mockito}"
     const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockito}"
     const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTesting}"
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
 }
 
 object AndroidTestLibs{

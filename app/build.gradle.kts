@@ -45,6 +45,10 @@ dependencies {
     implementation(Libs.espressoIdlingResource)
     implementation(Libs.viewModel)
 
+    // Kotlin-Coroutines
+    implementation(Libs.coroutinesCore)
+    implementation(Libs.coroutinesAndroid)
+
     // Hilt-library
     implementation(Libs.hilt)
     kapt(Kapt.hilt)
@@ -54,6 +58,7 @@ dependencies {
     testImplementation(TestLibs.mockitoKotlin)
     testImplementation(TestLibs.mockitoInline)
     testImplementation(TestLibs.coreTesting)
+    testImplementation(TestLibs.coroutines)
 
     androidTestImplementation(AndroidTestLibs.extJunit)
     androidTestImplementation(AndroidTestLibs.extJunitKtx)
