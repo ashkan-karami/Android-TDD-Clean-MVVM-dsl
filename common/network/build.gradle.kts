@@ -28,10 +28,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":common:base_domain"))
+    // base_domain contains domain classes and Coroutines
+    api(project(":common:base_domain"))
 
     implementation(Libs.coreKtx)
     implementation(Libs.retrofit)
-
-    testImplementation(TestLibs.junit)
 }
