@@ -30,6 +30,7 @@ android {
 dependencies {
 
     implementation(Libs.coreKtx)
+    implementation(Libs.appcompat)
 
     testImplementation(TestLibs.junit)
 }

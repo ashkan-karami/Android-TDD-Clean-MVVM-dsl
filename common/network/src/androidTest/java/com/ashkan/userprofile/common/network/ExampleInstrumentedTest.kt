@@ -1,4 +1,4 @@
-package com.ashkan.userprofile.common.core
+package com.ashkan.userprofile.common.network
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.ashkan.userprofile.common.core", appContext.packageName)
+        assertEquals("com.ashkan.userprofile.common.network", appContext.packageName)
     }
 }

@@ -15,10 +15,10 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/common/base_domain" />
             <option value="$PROJECT_DIR$/common/core" />
+            <option value="$PROJECT_DIR$/common/network" />
           </set>
         </option>
       </GradleProjectSettings>
     </option>
-    <option name="offlineMode" value="true" />
   </component>
 </project>
