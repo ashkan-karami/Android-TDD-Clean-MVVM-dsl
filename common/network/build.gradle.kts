@@ -28,9 +28,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":common:base_domain"))
 
     implementation(Libs.coreKtx)
-    implementation(Libs.appcompat)
+    implementation(Libs.retrofit)
 
     testImplementation(TestLibs.junit)
 }

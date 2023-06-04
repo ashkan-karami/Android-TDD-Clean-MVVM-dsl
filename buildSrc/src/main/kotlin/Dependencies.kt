@@ -15,6 +15,7 @@ object Libs{
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
 }
 
 object TestLibs{
