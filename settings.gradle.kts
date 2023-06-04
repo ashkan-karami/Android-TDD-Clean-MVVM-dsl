@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "UserProfile"
 include(":app")
 include(":common:base_domain")
+include(":common:core")
