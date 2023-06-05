@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/common/core" />
             <option value="$PROJECT_DIR$/common/network" />
             <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/domain" />
           </set>
         </option>
       </GradleProjectSettings>
