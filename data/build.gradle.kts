@@ -9,12 +9,10 @@ android {
     defaultConfig {
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
-
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
         }
     }
     compileOptions {
@@ -27,9 +25,7 @@ android {
 }
 
 dependencies {
-    // base_domain contains domain classes and Coroutines
-    implementation(project(":common:base_domain"))
 
     implementation(Libs.coreKtx)
-    implementation(Libs.retrofit)
+    testImplementation(TestLibs.junit)
 }
