@@ -10,6 +10,6 @@ java {
 
 dependencies {
 // base_domain contains domain classes and Coroutines
-    implementation(project(":common:base_domain"))
+    api(project(":common:base_domain"))
     testImplementation(TestLibs.junit)
 }

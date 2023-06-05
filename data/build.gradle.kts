@@ -25,6 +25,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":common:network"))
+    // domain classes along with base domain and coroutines
+    api(project(":domain"))
 
     implementation(Libs.coreKtx)
     testImplementation(TestLibs.junit)
