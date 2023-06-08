@@ -12,6 +12,7 @@
       <module name="UserProfile.common.core" target="11" />
       <module name="UserProfile.common.navigation" target="11" />
       <module name="UserProfile.common.network" target="11" />
+      <module name="UserProfile.common.ui" target="11" />
       <module name="UserProfile.data" target="11" />
       <module name="UserProfile.domain" target="11" />
       <module name="UserProfile.domain.main" target="11" />

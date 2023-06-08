@@ -43,8 +43,8 @@ android {
 
 dependencies {
 
-    implementation(project(":common:navigation"))
-    api(project(":common:core"))
+    api(project(":common:navigation"))
+    api(project(":common:ui"))
 
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
