@@ -17,6 +17,7 @@
       <module name="UserProfile.domain.main" target="11" />
       <module name="UserProfile.domain.test" target="11" />
       <module name="UserProfile.features.login.data" target="11" />
+      <module name="UserProfile.features.login.login_feature" target="11" />
       <module name="UserProfile.features.profile.data" target="11" />
       <module name="UserProfile.features.profile.domain" target="11" />
       <module name="UserProfile.features.profile.domain.main" target="11" />

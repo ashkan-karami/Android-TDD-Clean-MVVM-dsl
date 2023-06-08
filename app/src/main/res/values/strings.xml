@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">UserProfile</string>
     <string name="title_profile_feature">Profile</string>
+    <string name="title_login_feature">Login</string>
 </resources>

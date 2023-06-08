@@ -53,4 +53,5 @@ object Kapt{
 
 object Features{
     const val profileFeature = ":features:profile:profile_feature"
+    const val loginFeature = ":features:login:login_feature"
 }
