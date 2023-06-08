@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/features/profile" />
             <option value="$PROJECT_DIR$/features/profile/data" />
             <option value="$PROJECT_DIR$/features/profile/domain" />
+            <option value="$PROJECT_DIR$/features/profile/profile_feature" />
           </set>
         </option>
       </GradleProjectSettings>

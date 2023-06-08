@@ -34,6 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    dynamicFeatures += setOf(":features:profile:profile_feature")
 }
 
 dependencies {
