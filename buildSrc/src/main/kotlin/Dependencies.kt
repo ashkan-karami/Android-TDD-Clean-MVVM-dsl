@@ -48,6 +48,7 @@ object AndroidTestLibs{
 
 object Kapt{
     const val hilt = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+    const val dataBinding = "com.android.databinding:compiler:${Versions.dataBinding}"
 }
 
 object Features{

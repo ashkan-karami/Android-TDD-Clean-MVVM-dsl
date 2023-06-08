@@ -28,6 +28,9 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+    buildFeatures {
+        dataBinding = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -61,6 +64,8 @@ dependencies {
     // Hilt-library
     implementation(Libs.hilt)
     kapt(Kapt.hilt)
+
+    kapt(Kapt.dataBinding)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockito)
