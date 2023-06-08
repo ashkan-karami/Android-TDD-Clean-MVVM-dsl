@@ -8,6 +8,8 @@ object Plugins{
     const val android = "android"
     const val kotlinKapt = "kotlin-kapt"
     const val hilt = "com.google.dagger.hilt.android"
+    const val navigation = "androidx.navigation.safeargs"
+    const val navigationKotlin = "androidx.navigation.safeargs.kotlin"
 }
 
 object Libs{
@@ -21,6 +23,9 @@ object Libs{
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    const val navigationDynamicFeature = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
 }
 
 object TestLibs{

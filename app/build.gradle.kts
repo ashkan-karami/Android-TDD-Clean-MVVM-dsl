@@ -3,6 +3,7 @@ plugins {
     kotlin(Plugins.android)
     id(Plugins.kotlinKapt)
     id(Plugins.hilt)
+    id(Plugins.navigationKotlin)
 }
 
 android {
@@ -39,7 +40,7 @@ android {
 
 dependencies {
 
-    implementation(project(":common:base_domain"))
+    implementation(project(":common:navigation"))
     api(project(":common:core"))
 
     implementation(Libs.coreKtx)
@@ -52,6 +53,10 @@ dependencies {
     // Kotlin-Coroutines
     implementation(Libs.coroutinesCore)
     implementation(Libs.coroutinesAndroid)
+
+    implementation(Libs.navigationFragmentKtx)
+    implementation(Libs.navigationUiKtx)
+    implementation(Libs.navigationDynamicFeature)
 
     // Hilt-library
     implementation(Libs.hilt)

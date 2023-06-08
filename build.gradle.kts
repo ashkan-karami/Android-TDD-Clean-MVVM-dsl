@@ -4,6 +4,7 @@ plugins {
     id(Plugins.androidLibrary) version Versions.android apply false
     id(Plugins.kotlin) version Versions.kotlin apply false
     id(Plugins.hilt) version Versions.hilt apply false
+    id(Plugins.navigation) version Versions.navigation apply false
 }
 
 tasks.register("clean",Delete::class){

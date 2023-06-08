@@ -12,6 +12,7 @@ object Versions{
     const val viewModel = "2.4.1"
     const val coroutines = "1.6.4"
     const val retrofit = "2.9.0"
+    const val navigation = "2.5.3"
 
     //test
     const val espressoIdlingResource = "3.5.1"

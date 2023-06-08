@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.androidLibrary)
     kotlin(Plugins.android)
+    id(Plugins.navigationKotlin)
 }
 
 android {
@@ -36,4 +37,7 @@ dependencies {
 
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
+    implementation(Libs.navigationFragmentKtx)
+    implementation(Libs.navigationUiKtx)
+    implementation(Libs.navigationDynamicFeature)
 }
