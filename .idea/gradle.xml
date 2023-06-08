@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/common/base_domain" />
             <option value="$PROJECT_DIR$/common/core" />
+            <option value="$PROJECT_DIR$/common/navigation" />
             <option value="$PROJECT_DIR$/common/network" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
