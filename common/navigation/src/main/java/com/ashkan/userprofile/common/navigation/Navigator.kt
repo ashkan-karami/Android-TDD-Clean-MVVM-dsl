@@ -11,13 +11,11 @@ object Navigator {
     get() = navControllerReference.get()
 }
 
-inline fun <reified T> Fragment.crossNavigate(
-    navigationFlow: NavigationFlow,
-    args: T? = null,
-) {
+fun Fragment.crossNavigate(
+    navigationFlow: NavigationFlow) {
     when(navigationFlow){
         NavigationFlow.ProfileFlow -> navigateToProfile()
     }
 }
 
-fun navigateToProfile() = Navigator.navController?.navigate(R.id.profile_graph)
+private fun navigateToProfile() = Navigator.navController?.navigate(R.id.profile_graph)
