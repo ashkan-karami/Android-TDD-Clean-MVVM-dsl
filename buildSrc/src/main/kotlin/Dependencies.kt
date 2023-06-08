@@ -1,7 +1,10 @@
 object Plugins{
     const val androidApplication = "com.android.application"
     const val androidLibrary = "com.android.library"
+    const val dynamicFeature = "com.android.dynamic-feature"
     const val kotlin = "org.jetbrains.kotlin.android"
+    const val android = "android"
+    const val kotlinKapt = "kotlin-kapt"
     const val hilt = "com.google.dagger.hilt.android"
 }
 
@@ -33,8 +36,13 @@ object AndroidTestLibs{
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     const val testRunner = "androidx.test:runner:${Versions.testRunner}"
     const val barista = "com.adevinta.android:barista:${Versions.barista}"
+    const val annotation = "androidx.annotation:annotation:${Versions.annotation}"
 }
 
 object Kapt{
     const val hilt = "com.google.dagger:hilt-compiler:${Versions.hilt}"
+}
+
+object Features{
+    const val profileFeature = ":features:profile:profile_feature"
 }

@@ -1,7 +1,7 @@
 plugins {
     id(Plugins.androidApplication)
-    kotlin("android")
-    id("kotlin-kapt")
+    kotlin(Plugins.android)
+    id(Plugins.kotlinKapt)
     id(Plugins.hilt)
 }
 
@@ -34,7 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    dynamicFeatures += setOf(":features:profile:profile_feature")
+    dynamicFeatures += setOf(Features.profileFeature)
 }
 
 dependencies {

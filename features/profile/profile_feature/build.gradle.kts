@@ -1,12 +1,12 @@
 plugins {
-    id("com.android.dynamic-feature")
-    id("org.jetbrains.kotlin.android")
+    id(Plugins.dynamicFeature)
+    kotlin(Plugins.android)
 }
 android {
-    compileSdk = 32
+    compileSdk = AppConfig.compileSdk
 
     defaultConfig {
-        minSdk = 21
+        minSdk = AppConfig.minSdk
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -23,9 +23,14 @@ android {
 
 dependencies {
     implementation(project(":app"))
-    implementation("androidx.core:core-ktx:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.annotation:annotation:1.6.0")
+    implementation(Libs.coreKtx)
+    implementation(Libs.appcompat)
+    implementation(Libs.material)
+    implementation(Libs.constraintLayout)
+
+    testImplementation(TestLibs.junit)
+
+    androidTestImplementation(AndroidTestLibs.extJunit)
+    androidTestImplementation(AndroidTestLibs.espresso)
+    androidTestImplementation(AndroidTestLibs.annotation)
 }

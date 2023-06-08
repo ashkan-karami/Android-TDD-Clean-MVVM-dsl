@@ -26,4 +26,5 @@ object Versions{
     const val espresso = "3.5.1"
     const val testRunner = "1.5.2"
     const val barista = "4.2.0"
+    const val annotation = "1.6.0"
 }
