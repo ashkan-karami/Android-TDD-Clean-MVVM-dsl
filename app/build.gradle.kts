@@ -10,6 +10,9 @@ android {
     compileSdk = AppConfig.compileSdk
 
     defaultConfig {
+        configurations.all {
+            resolutionStrategy { force(Libs.coreKtx) }
+        }
         applicationId = AppConfig.applicationId
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
@@ -44,11 +47,12 @@ android {
 dependencies {
 
     api(project(":common:navigation"))
-    api(project(":common:ui"))
+    implementation(project(":common:ui"))
 
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
     implementation(Libs.material)
+    implementation(Libs.legacy)
     implementation(Libs.constraintLayout)
     implementation(Libs.espressoIdlingResource)
     implementation(Libs.viewModel)
@@ -64,8 +68,6 @@ dependencies {
     // Hilt-library
     implementation(Libs.hilt)
     kapt(Kapt.hilt)
-
-    kapt(Kapt.dataBinding)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockito)

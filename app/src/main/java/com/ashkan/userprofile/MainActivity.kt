@@ -2,9 +2,11 @@ package com.ashkan.userprofile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.ashkan.userprofile.common.navigation.Navigator
+import com.ashkan.userprofile.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import java.lang.ref.WeakReference
 
@@ -12,7 +14,7 @@ import java.lang.ref.WeakReference
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHost) as NavHostFragment
         Navigator.navControllerReference = WeakReference(navHostFragment.navController)

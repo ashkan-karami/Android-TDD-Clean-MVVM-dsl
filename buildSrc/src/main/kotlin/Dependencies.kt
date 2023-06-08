@@ -26,6 +26,7 @@ object Libs{
     const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val navigationDynamicFeature = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
+    const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
 }
 
 object TestLibs{
@@ -48,7 +49,7 @@ object AndroidTestLibs{
 
 object Kapt{
     const val hilt = "com.google.dagger:hilt-compiler:${Versions.hilt}"
-    const val dataBinding = "com.android.databinding:compiler:${Versions.dataBinding}"
+    const val dataBinding = "androidx.databinding:databinding-compiler:${Versions.dataBinding}"
 }
 
 object Features{

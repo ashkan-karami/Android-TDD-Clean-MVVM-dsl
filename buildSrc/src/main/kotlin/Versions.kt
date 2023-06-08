@@ -9,11 +9,12 @@ object Versions{
     const val material = "1.7.0"
     const val constraintLayout = "2.1.4"
     const val hilt = "2.44.2"
-    const val dataBinding = "3.2.0-alpha10"
+    const val dataBinding = "8.2.0-alpha07"
     const val viewModel = "2.4.1"
     const val coroutines = "1.6.4"
     const val retrofit = "2.9.0"
     const val navigation = "2.5.3"
+    const val legacy = "1.0.0"
 
     //test
     const val espressoIdlingResource = "3.5.1"
