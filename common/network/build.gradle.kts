@@ -31,5 +31,7 @@ dependencies {
     implementation(project(":common:base_domain"))
 
     implementation(Libs.coreKtx)
-    implementation(Libs.retrofit)
+    api(Libs.retrofit)
+    api(Libs.moshi)
+    api(Libs.converterMoshi)
 }

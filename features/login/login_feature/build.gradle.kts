@@ -2,6 +2,7 @@ plugins {
     id(Plugins.dynamicFeature)
     kotlin(Plugins.android)
     id(Plugins.kotlinKapt)
+    id(Plugins.hilt)
 }
 android {
     compileSdk = AppConfig.compileSdk
@@ -35,6 +36,8 @@ android {
 dependencies {
     implementation(project(":app"))
     implementation(project(":common:ui"))
+    implementation(project(":features:login:data"))
+    implementation(project(":features:login:domain"))
     implementation(Libs.legacy)
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
@@ -45,6 +48,9 @@ dependencies {
     // Kotlin-Coroutines
     implementation(Libs.coroutinesCore)
     implementation(Libs.coroutinesAndroid)
+
+    implementation(Libs.hilt)
+    kapt(Kapt.hilt)
 
     testImplementation(TestLibs.junit)
 

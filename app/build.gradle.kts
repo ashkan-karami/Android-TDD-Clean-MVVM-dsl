@@ -61,9 +61,18 @@ dependencies {
     implementation(Libs.coroutinesCore)
     implementation(Libs.coroutinesAndroid)
 
+    // Retrofit
+    api(Libs.retrofit)
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0")
+    api(Libs.moshi)
+    api(Libs.converterMoshi)
+
     implementation(Libs.navigationFragmentKtx)
     implementation(Libs.navigationUiKtx)
-    implementation(Libs.navigationDynamicFeature)
+    api(Libs.navigationDynamicFeature)
 
     // Hilt-library
     implementation(Libs.hilt)

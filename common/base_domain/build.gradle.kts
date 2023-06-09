@@ -11,4 +11,5 @@ java {
 dependencies {
 
     api(Libs.coroutinesCore)
+    api(Libs.javaInject)
 }

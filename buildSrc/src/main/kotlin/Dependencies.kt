@@ -19,6 +19,7 @@ object Libs{
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val espressoIdlingResource = "androidx.test.espresso:espresso-idling-resource:${Versions.espressoIdlingResource}"
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val javaInject = "javax.inject:javax.inject:1"
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
@@ -27,6 +28,8 @@ object Libs{
     const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val navigationDynamicFeature = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
     const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
+    const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+    const val converterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.converterMoshi}"
 }
 
 object TestLibs{

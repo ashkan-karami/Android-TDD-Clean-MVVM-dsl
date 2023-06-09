@@ -25,7 +25,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":common:network"))
+    implementation(project(":common:network")) // with retrofit
+    implementation(project(":features:login:domain"))
 
     implementation(Libs.coreKtx)
     testImplementation(TestLibs.junit)
