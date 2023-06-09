@@ -21,6 +21,9 @@ android {
             )
         }
     }
+    hilt {
+        enableAggregatingTask = true
+    }
     buildFeatures {
         dataBinding = true
     }
@@ -51,6 +54,9 @@ dependencies {
 
     implementation(Libs.hilt)
     kapt(Kapt.hilt)
+
+    implementation(Libs.navigationFragmentKtx)
+    implementation(Libs.navigationUiKtx)
 
     testImplementation(TestLibs.junit)
 

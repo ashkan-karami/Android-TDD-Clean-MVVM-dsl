@@ -31,6 +31,9 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+    hilt {
+        enableAggregatingTask = true
+    }
     buildFeatures {
         dataBinding = true
     }
