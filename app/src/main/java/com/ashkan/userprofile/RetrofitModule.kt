@@ -49,7 +49,6 @@ class RetrofitModule @Inject constructor() {
             .addInterceptor(Interceptor { chain ->
                 chain.proceed(chain.request().newBuilder().apply {
                     header("User-Agent", "Android")
-                    //header(Constants.KEY_AUTHORIZATION, Hawk.get(Constants.KEY_ACCESS_TOKEN, ""))
                 }.build())
             })
 

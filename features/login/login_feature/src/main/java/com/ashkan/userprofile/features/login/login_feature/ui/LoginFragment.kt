@@ -9,7 +9,6 @@ import com.ashkan.userprofile.common.ui.BaseFragment
 import com.ashkan.userprofile.common.ui.foldResponse
 import com.ashkan.userprofile.features.login.login_feature.R
 import com.ashkan.userprofile.features.login.login_feature.databinding.FragmentLoginBinding
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
