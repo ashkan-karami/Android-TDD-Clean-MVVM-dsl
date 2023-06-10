@@ -38,6 +38,8 @@ object Libs{
     const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
     const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
     const val converterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.converterMoshi}"
+    const val chucker = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
+    const val chuckerNoOp = "com.github.chuckerteam.chucker:library-no-op:${Versions.chucker}"
 }
 
 object TestLibs{

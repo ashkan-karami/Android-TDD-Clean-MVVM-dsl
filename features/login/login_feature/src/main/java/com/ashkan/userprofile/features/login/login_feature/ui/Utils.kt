@@ -19,3 +19,10 @@ fun View.setClick(action: (() -> Unit)?) {
     }
 }
 
+fun View.gone() {
+    visibility = View.GONE
+}
+
+fun View.visible() {
+    visibility = View.VISIBLE
+}

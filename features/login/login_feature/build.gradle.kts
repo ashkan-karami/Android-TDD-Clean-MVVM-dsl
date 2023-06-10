@@ -39,12 +39,6 @@ dependencies {
     implementation(project(":features:login:data"))
     implementation(project(":features:login:domain"))
 
-    testImplementation(TestLibs.junit)
-
-    androidTestImplementation(AndroidTestLibs.extJunit)
-    androidTestImplementation(AndroidTestLibs.espresso)
-    androidTestImplementation(AndroidTestLibs.annotation)
-
     kapt(Kapt.daggerCompiler)
     kapt(Kapt.daggerProcessor)
 }

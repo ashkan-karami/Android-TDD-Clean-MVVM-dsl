@@ -26,14 +26,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
     override fun onAttach(context: Context) {
         super.onAttach(context)
         inject()
+        collectViewModel()
     }
 
     override fun bind(savedInstanceState: Bundle?) {
-        collectViewModel()
         dataBinding.lifecycleOwner = viewLifecycleOwner
         dataBinding.submit = {
             viewModel.startLogin()
-            crossNavigate(NavigationFlow.ProfileFlow)
         }
     }
 
@@ -54,17 +53,24 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
             }
     }
 
-    private fun collectViewModel(){
+    private fun collectViewModel() {
         lifecycleScope.launch {
-            viewModel.profileFlow.collect{
+            viewModel.profileFlow.collect {
                 it.foldResponse(
                     requireContext(),
-                    onLoading = { /* show loading */ },
-                    onStopLoading = { /* stop loading */ },
+                    onLoading = { dataBinding.progressBar.visible() },
+                    onStopLoading = {
+                        dataBinding.progressBar.gone()
+                        navigateToProfile()
+                    },
                     onSuccess = { /* do some work */ },
                     onFailure = { /* show failure message */ }
                 )
             }
         }
+    }
+
+    private fun navigateToProfile() = lifecycleScope.launchWhenResumed {
+        crossNavigate(NavigationFlow.ProfileFlow)
     }
 }

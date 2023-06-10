@@ -1,11 +1,14 @@
 package com.ashkan.userprofile.di
 
+import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -37,11 +40,12 @@ class RetrofitModule @Inject constructor() {
 
     @Singleton
     @Provides
-    fun provideHttpClient(): OkHttpClient {
+    fun provideHttpClient(@ApplicationContext context: Context): OkHttpClient {
         return OkHttpClient
             .Builder()
             .readTimeout(15, TimeUnit.SECONDS)
             .connectTimeout(15, TimeUnit.SECONDS)
+            .addInterceptor(ChuckerInterceptor(context))
             .addInterceptor(Interceptor { chain ->
                 chain.proceed(chain.request().newBuilder().apply {
                     header("User-Agent", "Android")

@@ -23,6 +23,7 @@ object Versions{
     const val legacy = "1.0.0"
     const val moshi = "1.12.0"
     const val converterMoshi = "2.9.0"
+    const val chucker = "3.5.2"
 
     //test
     const val espressoIdlingResource = "3.5.1"

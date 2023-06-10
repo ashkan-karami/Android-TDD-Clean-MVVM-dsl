@@ -5,15 +5,15 @@ import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 import com.squareup.moshi.Json
 
 data class LoginResponseModel(
-    @Json(name = "accessToken")
-    val accessToken: String,
-    @Json(name = "refreshToken")
-    val refreshToken: String
+    @Json(name = "id")
+    val id: Int,
+    @Json(name = "name")
+    val name: String,
 ): EntityModel<LoginResponse>{
 
     override fun toDomain(): LoginResponse =
         LoginResponse(
-            accessToken = accessToken,
-            refreshToken = refreshToken
+            id = id,
+            name = name
         )
 }

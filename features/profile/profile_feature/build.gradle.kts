@@ -23,10 +23,4 @@ android {
 
 dependencies {
     implementation(project(":app"))
-
-    testImplementation(TestLibs.junit)
-
-    androidTestImplementation(AndroidTestLibs.extJunit)
-    androidTestImplementation(AndroidTestLibs.espresso)
-    androidTestImplementation(AndroidTestLibs.annotation)
 }

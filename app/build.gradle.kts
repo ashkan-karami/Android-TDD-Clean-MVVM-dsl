@@ -91,6 +91,10 @@ dependencies {
     kapt(Kapt.daggerCompiler)
     kapt(Kapt.daggerProcessor)
 
+    // Chucker for api tracking
+    debugImplementation(Libs.chucker)
+    releaseImplementation(Libs.chuckerNoOp)
+
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockito)
     testImplementation(TestLibs.mockitoKotlin)
