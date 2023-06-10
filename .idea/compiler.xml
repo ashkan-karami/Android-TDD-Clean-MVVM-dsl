@@ -5,25 +5,28 @@
       <module name="TDD-Clean-MVVM-dsl.buildSrc" target="11" />
       <module name="TDD-Clean-MVVM-dsl.buildSrc.main" target="11" />
       <module name="TDD-Clean-MVVM-dsl.buildSrc.test" target="11" />
-      <module name="UserProfile.app" target="11" />
+      <module name="UserProfile.app" target="17" />
+      <module name="UserProfile.buildSrc" target="17" />
+      <module name="UserProfile.buildSrc.main" target="17" />
+      <module name="UserProfile.buildSrc.test" target="17" />
       <module name="UserProfile.common.base_domain" target="11" />
       <module name="UserProfile.common.base_domain.main" target="11" />
       <module name="UserProfile.common.base_domain.test" target="11" />
-      <module name="UserProfile.common.core" target="11" />
-      <module name="UserProfile.common.navigation" target="11" />
-      <module name="UserProfile.common.network" target="11" />
-      <module name="UserProfile.common.ui" target="11" />
+      <module name="UserProfile.common.core" target="17" />
+      <module name="UserProfile.common.navigation" target="17" />
+      <module name="UserProfile.common.network" target="17" />
+      <module name="UserProfile.common.ui" target="17" />
       <module name="UserProfile.data" target="11" />
       <module name="UserProfile.domain" target="11" />
       <module name="UserProfile.domain.main" target="11" />
       <module name="UserProfile.domain.test" target="11" />
-      <module name="UserProfile.features.login.data" target="11" />
-      <module name="UserProfile.features.login.login_feature" target="11" />
-      <module name="UserProfile.features.profile.data" target="11" />
+      <module name="UserProfile.features.login.data" target="17" />
+      <module name="UserProfile.features.login.login_feature" target="17" />
+      <module name="UserProfile.features.profile.data" target="17" />
       <module name="UserProfile.features.profile.domain" target="11" />
       <module name="UserProfile.features.profile.domain.main" target="11" />
       <module name="UserProfile.features.profile.domain.test" target="11" />
-      <module name="UserProfile.features.profile.profile_feature" target="11" />
+      <module name="UserProfile.features.profile.profile_feature" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

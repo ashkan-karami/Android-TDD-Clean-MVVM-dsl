@@ -23,10 +23,6 @@ android {
 
 dependencies {
     implementation(project(":app"))
-    implementation(Libs.coreKtx)
-    implementation(Libs.appcompat)
-    implementation(Libs.material)
-    implementation(Libs.constraintLayout)
 
     testImplementation(TestLibs.junit)
 

@@ -2,7 +2,6 @@ plugins {
     id(Plugins.dynamicFeature)
     kotlin(Plugins.android)
     id(Plugins.kotlinKapt)
-    id(Plugins.hilt)
 }
 android {
     compileSdk = AppConfig.compileSdk
@@ -21,9 +20,7 @@ android {
             )
         }
     }
-    hilt {
-        enableAggregatingTask = true
-    }
+
     buildFeatures {
         dataBinding = true
     }
@@ -41,26 +38,13 @@ dependencies {
     implementation(project(":common:ui"))
     implementation(project(":features:login:data"))
     implementation(project(":features:login:domain"))
-    implementation(Libs.legacy)
-    implementation(Libs.coreKtx)
-    implementation(Libs.appcompat)
-    implementation(Libs.material)
-    implementation(Libs.constraintLayout)
-    implementation(Libs.viewModel)
-
-    // Kotlin-Coroutines
-    implementation(Libs.coroutinesCore)
-    implementation(Libs.coroutinesAndroid)
-
-    implementation(Libs.hilt)
-    kapt(Kapt.hilt)
-
-    implementation(Libs.navigationFragmentKtx)
-    implementation(Libs.navigationUiKtx)
 
     testImplementation(TestLibs.junit)
 
     androidTestImplementation(AndroidTestLibs.extJunit)
     androidTestImplementation(AndroidTestLibs.espresso)
     androidTestImplementation(AndroidTestLibs.annotation)
+
+    kapt(Kapt.daggerCompiler)
+    kapt(Kapt.daggerProcessor)
 }

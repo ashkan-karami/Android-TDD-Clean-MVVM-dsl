@@ -52,13 +52,13 @@ dependencies {
     api(project(":common:navigation"))
     implementation(project(":common:ui"))
 
-    implementation(Libs.coreKtx)
-    implementation(Libs.appcompat)
-    implementation(Libs.material)
-    implementation(Libs.legacy)
-    implementation(Libs.constraintLayout)
-    implementation(Libs.espressoIdlingResource)
-    implementation(Libs.viewModel)
+    api(Libs.coreKtx)
+    api(Libs.appcompat)
+    api(Libs.material)
+    //implementation(Libs.legacy)
+    api(Libs.constraintLayout)
+    api(Libs.espressoIdlingResource)
+    api(Libs.viewModel)
 
     // Kotlin-Coroutines
     implementation(Libs.coroutinesCore)
@@ -66,20 +66,26 @@ dependencies {
 
     // Retrofit
     api(Libs.retrofit)
-    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
-    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0")
+    implementation(Libs.okhttp)
+    implementation(Libs.retrofitCoroutineAdapter)
+    implementation(Libs.retrofitExperimentalAdapter)
     api(Libs.moshi)
     api(Libs.converterMoshi)
 
-    implementation(Libs.navigationFragmentKtx)
-    implementation(Libs.navigationUiKtx)
+    // navigation
+    api(Libs.navigationFragmentKtx)
+    api(Libs.navigationUiKtx)
     api(Libs.navigationDynamicFeature)
 
     // Hilt-library
-    implementation(Libs.hilt)
+    api(Libs.hilt)
+    api(Libs.hiltNavigation) // working with Navigation
     kapt(Kapt.hilt)
+    kapt(Kapt.hiltX) // working with WorkManager
+
+    // Dagger
+    api(Libs.dagger)
+    api(Libs.daggerAndroid)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockito)
