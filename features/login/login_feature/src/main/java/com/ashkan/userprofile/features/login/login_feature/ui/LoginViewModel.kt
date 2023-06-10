@@ -6,19 +6,24 @@ import com.ashkan.userprofile.common.ui.UiState
 import com.ashkan.userprofile.common.ui.toUiState
 import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 import com.ashkan.userprofile.features.login.domain.usecase.LoginUseCase
+import com.ashkan.userprofile.features.login.login_feature.di.LoginComponent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class LoginViewModel : ViewModel() {
+class LoginViewModel @Inject constructor(): ViewModel() {
 
     @Inject
     lateinit var loginUseCase: LoginUseCase
 
     private var _profileFlow = MutableStateFlow<UiState<LoginResponse>>(UiState.None())
     val profileFlow = _profileFlow.asStateFlow()
+
+    init {
+        LoginComponent.instance?.inject(this@LoginViewModel)
+    }
 
     fun startLogin() = viewModelScope.launch {
         loginUseCase.invoke(

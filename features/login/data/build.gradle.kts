@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.androidLibrary)
     kotlin(Plugins.android)
+    id(Plugins.kotlinKapt)
 }
 
 android {
@@ -30,4 +31,7 @@ dependencies {
 
     implementation(Libs.coreKtx)
     testImplementation(TestLibs.junit)
+
+    api(Libs.dagger)
+    kapt(Kapt.daggerCompiler)
 }

@@ -59,6 +59,7 @@ dependencies {
     api(Libs.constraintLayout)
     api(Libs.espressoIdlingResource)
     api(Libs.viewModel)
+    api(Libs.viewModelSaveState)
 
     // Kotlin-Coroutines
     implementation(Libs.coroutinesCore)
@@ -86,6 +87,9 @@ dependencies {
     // Dagger
     api(Libs.dagger)
     api(Libs.daggerAndroid)
+    api(Libs.daggerSupport)
+    kapt(Kapt.daggerCompiler)
+    kapt(Kapt.daggerProcessor)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockito)

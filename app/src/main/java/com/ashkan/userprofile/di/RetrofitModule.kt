@@ -1,13 +1,11 @@
-package com.ashkan.userprofile
+package com.ashkan.userprofile.di
 
-import android.content.Context
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -39,9 +37,7 @@ class RetrofitModule @Inject constructor() {
 
     @Singleton
     @Provides
-    fun provideHttpClient(
-        @ApplicationContext context: Context
-    ): OkHttpClient {
+    fun provideHttpClient(): OkHttpClient {
         return OkHttpClient
             .Builder()
             .readTimeout(15, TimeUnit.SECONDS)
