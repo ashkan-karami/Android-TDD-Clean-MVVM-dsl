@@ -8,6 +8,7 @@ import com.ashkan.userprofile.common.navigation.NavigationFlow
 import com.ashkan.userprofile.common.navigation.crossNavigate
 import com.ashkan.userprofile.common.ui.BaseFragment
 import com.ashkan.userprofile.common.ui.foldResponse
+import com.ashkan.userprofile.common.ui.toast
 import com.ashkan.userprofile.di.DaggerDependencies
 import com.ashkan.userprofile.features.login.login_feature.R
 import com.ashkan.userprofile.features.login.login_feature.databinding.FragmentLoginBinding
@@ -63,8 +64,12 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
                         dataBinding.progressBar.gone()
                         navigateToProfile()
                     },
-                    onSuccess = { /* do some work */ },
-                    onFailure = { /* show failure message */ }
+                    onSuccess = {
+                        navigateToProfile()
+                    },
+                    onFailure = { message ->
+                        toast(message?:"Something went wrong!")
+                    }
                 )
             }
         }
