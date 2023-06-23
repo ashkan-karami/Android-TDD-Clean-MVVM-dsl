@@ -41,6 +41,7 @@ dependencies {
 
     kapt(Kapt.daggerCompiler)
     kapt(Kapt.daggerProcessor)
+    kapt(Kapt.room)
 
     testImplementation(TestLibs.junit)
 

@@ -91,6 +91,10 @@ dependencies {
     kapt(Kapt.daggerCompiler)
     kapt(Kapt.daggerProcessor)
 
+    api(Libs.room)
+    api(Libs.roomKtx)// room + coroutine
+    kapt(Kapt.room)
+
     // Chucker for api tracking
     debugImplementation(Libs.chucker)
     releaseImplementation(Libs.chuckerNoOp)

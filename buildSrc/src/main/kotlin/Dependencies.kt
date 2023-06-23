@@ -40,6 +40,8 @@ object Libs{
     const val converterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.converterMoshi}"
     const val chucker = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
     const val chuckerNoOp = "com.github.chuckerteam.chucker:library-no-op:${Versions.chucker}"
+    const val room = "androidx.room:room-runtime:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
 }
 
 object TestLibs{
@@ -66,6 +68,7 @@ object Kapt{
     const val dataBinding = "androidx.databinding:databinding-compiler:${Versions.dataBinding}"
     const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
     const val daggerProcessor = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
+    const val room = "androidx.room:room-compiler:${Versions.room}"
 }
 
 object Features{

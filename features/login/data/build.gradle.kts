@@ -34,4 +34,8 @@ dependencies {
 
     api(Libs.dagger)
     kapt(Kapt.daggerCompiler)
+
+    implementation(Libs.room)
+    implementation(Libs.roomKtx)
+    kapt(Kapt.room)
 }

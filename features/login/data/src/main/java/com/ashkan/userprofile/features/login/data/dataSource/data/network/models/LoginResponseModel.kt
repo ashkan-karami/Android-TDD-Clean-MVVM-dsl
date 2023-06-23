@@ -1,4 +1,4 @@
-package com.ashkan.userprofile.features.login.data.dataSource.network.models
+package com.ashkan.userprofile.features.login.data.dataSource.data.network.models
 
 import com.ashkan.userprofile.common.base_domain.model.EntityModel
 import com.ashkan.userprofile.features.login.domain.data.LoginResponse
