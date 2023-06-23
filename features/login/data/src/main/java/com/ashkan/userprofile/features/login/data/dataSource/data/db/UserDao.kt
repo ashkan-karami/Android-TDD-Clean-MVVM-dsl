@@ -4,7 +4,7 @@ import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-internal interface UserDao {
+interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(user: UserEntity)
@@ -30,6 +30,6 @@ internal interface UserDao {
     @get:Query("SELECT * FROM user ORDER BY id")
     val allUsers: Flow<List<UserEntity>>
 
-    @Query("SELECT * FROM user WHERE userId = :id")
-    suspend fun getUserById(id: Int): List<UserEntity>
+    @Query("SELECT * FROM user WHERE id = :id")
+    suspend fun getUserById(id: Int): UserEntity
 }

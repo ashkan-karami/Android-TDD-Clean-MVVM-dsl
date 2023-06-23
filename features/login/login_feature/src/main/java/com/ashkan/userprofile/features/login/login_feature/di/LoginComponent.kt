@@ -3,6 +3,7 @@ package com.ashkan.userprofile.features.login.login_feature.di
 import android.content.Context
 import com.ashkan.userprofile.di.DaggerDependencies
 import com.ashkan.userprofile.features.login.data.dataSource.di.DataModule
+import com.ashkan.userprofile.features.login.data.dataSource.di.DatabaseModule
 import dagger.BindsInstance
 import dagger.Component
 
@@ -10,6 +11,7 @@ import dagger.Component
     dependencies = [DaggerDependencies::class],
     modules = [
         DataModule::class,
+        DatabaseModule::class,
         LoginModule::class
     ]
 )
