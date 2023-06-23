@@ -62,7 +62,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
                     onLoading = { dataBinding.progressBar.visible() },
                     onStopLoading = {
                         dataBinding.progressBar.gone()
-                        navigateToProfile()
                     },
                     onSuccess = {
                         navigateToProfile()
@@ -78,4 +77,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
     private fun navigateToProfile() = lifecycleScope.launchWhenResumed {
         crossNavigate(NavigationFlow.ProfileFlow)
     }
+
+    // TODO add reading from assets in case offline data needed.
 }

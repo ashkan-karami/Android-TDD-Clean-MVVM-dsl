@@ -3,6 +3,7 @@ package com.ashkan.userprofile.features.login.login_feature.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ashkan.userprofile.common.ui.UiState
+import com.ashkan.userprofile.common.ui.log
 import com.ashkan.userprofile.common.ui.toUiState
 import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 import com.ashkan.userprofile.features.login.domain.usecase.LoginUseCase
@@ -34,6 +35,7 @@ class LoginViewModel @Inject constructor(): ViewModel() {
         ).onStart {
             _profileFlow.emit(UiState.Loading())
         }.collect {
+            log("view model result="+it)
             _profileFlow.emit(it.toUiState())
         }
     }

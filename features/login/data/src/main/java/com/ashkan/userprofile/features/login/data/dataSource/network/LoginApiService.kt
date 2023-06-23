@@ -1,13 +1,10 @@
 package com.ashkan.userprofile.features.login.data.dataSource.network
 
-import com.ashkan.userprofile.common.network.NetworkResponse
 import com.ashkan.userprofile.features.login.data.dataSource.network.models.LoginResponseModel
-import com.ashkan.userprofile.features.login.data.dataSource.network.models.LoginSendModel
-import retrofit2.http.Body
-import retrofit2.http.POST
+import retrofit2.http.GET
 
 interface LoginApiService {
 
-    @POST("users/1")
-    suspend fun startLogin(@Body BusSeats: LoginSendModel): NetworkResponse<LoginResponseModel>
+    @GET("users/1")
+    suspend fun startLogin(): LoginResponseModel
 }

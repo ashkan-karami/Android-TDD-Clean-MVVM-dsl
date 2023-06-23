@@ -15,10 +15,9 @@ class LoginRepositoryImpl @Inject constructor(
     override fun startLogin(userName: String, password: String): Flow<Result<LoginResponse>> =
         apiWrapper {
             apiService.startLogin(
-                LoginSendModel(
-                    userName,
-                    password
-                )
+
             )
         }
+
+    // TODO save data in Room-DB, read from db in case api fails
 }
