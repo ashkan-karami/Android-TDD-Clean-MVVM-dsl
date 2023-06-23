@@ -2,6 +2,7 @@ package com.ashkan.userprofile.features.login.data.dataSource.repository
 
 import com.ashkan.userprofile.common.network.apiWrapper
 import com.ashkan.userprofile.features.login.data.dataSource.data.db.UserDao
+import com.ashkan.userprofile.features.login.data.dataSource.data.db.UserEntity
 import com.ashkan.userprofile.features.login.data.dataSource.data.db.toDomainModel
 import com.ashkan.userprofile.features.login.data.dataSource.data.network.LoginApiService
 import com.ashkan.userprofile.features.login.data.dataSource.data.network.models.LoginResponseModel
@@ -22,10 +23,16 @@ class LoginRepositoryImpl @Inject constructor(
             apiService.startLogin()
         }
         return if (apiResult.firstOrNull()?.isSuccess == true){
+            updateUsers(apiResult.firstOrNull()?.getOrNull())
             apiResult
         }else{
             flow { emit(Result.success(userDao.getUserById(1).toDomainModel())) }
         }
     }
 
+    private suspend fun updateUsers(users: LoginResponse?){
+        users?.let {
+            userDao.insert(UserEntity(id = it.id, name = it.name))
+        }
+    }
 }

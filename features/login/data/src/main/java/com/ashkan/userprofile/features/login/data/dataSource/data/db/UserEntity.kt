@@ -7,7 +7,7 @@ import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 
 @Entity(tableName = "user")
 data class UserEntity(
-    @PrimaryKey(autoGenerate = true) var primaryKey: Int,
+    @PrimaryKey(autoGenerate = true) var primaryKey: Int = 1,
     @ColumnInfo(name = "id") val id: Int,
     @ColumnInfo(name = "name") val name: String
 )

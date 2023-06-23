@@ -16,7 +16,7 @@ class LoginUseCase @Inject constructor(
         val password: String
     ): UseCase.Param
 
-    override fun execute(param: Params): Flow<Result<LoginResponse>> =
+    override suspend fun execute(param: Params): Flow<Result<LoginResponse>> =
         repository.startLogin(
             userName = param.userName,
             password = param.password
