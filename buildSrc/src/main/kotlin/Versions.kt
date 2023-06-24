@@ -34,6 +34,9 @@ object Versions{
     const val mockito = "4.0.0"
     const val coreTesting = "2.1.0"
 
+    // debugImplementation
+    const val fragmentTesting = "1.5.7"
+
     //androidTestImplementation
     const val testRunner = "1.5.2"
     const val testRule = "1.5.2"

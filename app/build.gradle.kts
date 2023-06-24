@@ -96,8 +96,10 @@ dependencies {
     kapt(Kapt.room)
 
     // Chucker for api tracking
-    debugImplementation(Libs.chucker)
-    releaseImplementation(Libs.chuckerNoOp)
+    debugImplementation(DebugLibs.chucker)
+    releaseImplementation(releaseLibs.chuckerNoOp)
+
+    debugImplementation(DebugLibs.fragmentTesting) // FragmentScenario for empty activity
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockito)

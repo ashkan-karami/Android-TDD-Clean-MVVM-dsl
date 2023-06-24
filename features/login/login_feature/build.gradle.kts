@@ -45,6 +45,8 @@ dependencies {
 
     testImplementation(TestLibs.junit)
 
+    debugImplementation(DebugLibs.fragmentTesting)
+
     androidTestImplementation(AndroidTestLibs.extJunit)
     androidTestImplementation(AndroidTestLibs.espresso)
     androidTestImplementation(AndroidTestLibs.testRunner)

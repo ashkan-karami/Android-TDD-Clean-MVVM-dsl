@@ -38,8 +38,6 @@ object Libs{
     const val legacy = "androidx.legacy:legacy-support-v4:${Versions.legacy}"
     const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
     const val converterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.converterMoshi}"
-    const val chucker = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
-    const val chuckerNoOp = "com.github.chuckerteam.chucker:library-no-op:${Versions.chucker}"
     const val room = "androidx.room:room-runtime:${Versions.room}"
     const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
 }
@@ -51,6 +49,15 @@ object TestLibs{
     const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockito}"
     const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTesting}"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
+}
+
+object DebugLibs{
+    const val chucker = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
+    const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTesting}"
+}
+
+object releaseLibs{
+    const val chuckerNoOp = "com.github.chuckerteam.chucker:library-no-op:${Versions.chucker}"
 }
 
 object AndroidTestLibs{
