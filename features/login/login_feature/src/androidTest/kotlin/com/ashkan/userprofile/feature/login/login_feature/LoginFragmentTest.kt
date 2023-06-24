@@ -30,5 +30,9 @@ class LoginFragmentTest {
         scenario2.recreate() // Recreate the fragment
 
         onView(withId(R.id.button)).perform(click())
+
+        scenario2.onFragment { fragment ->
+            fragment.test()
+        }
     }
 }

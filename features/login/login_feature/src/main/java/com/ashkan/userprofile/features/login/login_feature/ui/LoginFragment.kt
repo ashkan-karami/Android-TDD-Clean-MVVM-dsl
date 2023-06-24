@@ -78,5 +78,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
         crossNavigate(NavigationFlow.ProfileFlow)
     }
 
+    fun test(){
+
+    }
+
     // TODO add reading from assets in case offline data needed.
 }
