@@ -35,9 +35,10 @@ object Versions{
     const val coreTesting = "2.1.0"
 
     //androidTestImplementation
+    const val testRunner = "1.5.2"
+    const val testRule = "1.5.2"
     const val extJunit = "1.1.5"
     const val espresso = "3.5.1"
-    const val testRunner = "1.5.2"
     const val barista = "4.2.0"
     const val annotation = "1.6.0"
 }

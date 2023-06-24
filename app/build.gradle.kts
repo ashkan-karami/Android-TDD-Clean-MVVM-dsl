@@ -106,10 +106,11 @@ dependencies {
     testImplementation(TestLibs.coreTesting)
     testImplementation(TestLibs.coroutines)
 
+    androidTestImplementation(AndroidTestLibs.testRunner)
+    androidTestImplementation(AndroidTestLibs.testRule)
     androidTestImplementation(AndroidTestLibs.extJunit)
     androidTestImplementation(AndroidTestLibs.extJunitKtx)
     androidTestImplementation(AndroidTestLibs.espresso)
-    androidTestImplementation(AndroidTestLibs.testRunner)
     androidTestImplementation(AndroidTestLibs.barista) {
         exclude(group = "org.jetbrains.kotlin")
         exclude(group = "androidx.legacy", module= "legacy-support-core-utils")

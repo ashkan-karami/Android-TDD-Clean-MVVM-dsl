@@ -54,10 +54,11 @@ object TestLibs{
 }
 
 object AndroidTestLibs{
+    const val testRunner = "androidx.test:runner:${Versions.testRunner}"
+    const val testRule = "androidx.test:rules:${Versions.testRule}"
     const val extJunit = "androidx.test.ext:junit:${Versions.extJunit}"
     const val extJunitKtx = "androidx.test.ext:junit-ktx:${Versions.extJunit}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
-    const val testRunner = "androidx.test:runner:${Versions.testRunner}"
     const val barista = "com.adevinta.android:barista:${Versions.barista}"
     const val annotation = "androidx.annotation:annotation:${Versions.annotation}"
 }
