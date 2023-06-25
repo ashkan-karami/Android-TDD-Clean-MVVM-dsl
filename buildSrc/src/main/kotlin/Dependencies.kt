@@ -43,7 +43,7 @@ object Libs{
 }
 
 object TestLibs{
-    const val junit = "junit:junit:${Versions.junit}"
+    const val junit = "junit:junit:4.13.2"
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.mockito}"
     const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockito}"

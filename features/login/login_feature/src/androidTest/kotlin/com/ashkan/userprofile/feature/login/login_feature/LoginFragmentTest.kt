@@ -31,6 +31,11 @@ class LoginFragmentTest {
 
         onView(withId(R.id.button)).perform(click())
 
+        /**
+         *   Don't keep references to the fragment that is passed into onFragment(). These references
+         *   consume system resources, and the references themselves might be stale, since the framework
+         *   can recreate the fragment.
+         */
         scenario2.onFragment { fragment ->
             fragment.test()
         }
