@@ -32,9 +32,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 
     override fun bind(savedInstanceState: Bundle?) {
         dataBinding.lifecycleOwner = viewLifecycleOwner
-        dataBinding.submit = {
+        if (viewModel.userList.isEmpty())
             viewModel.startLogin()
-        }
     }
 
     private fun inject() {
@@ -60,25 +59,27 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
                 it.foldResponse(
                     requireContext(),
                     onLoading = { dataBinding.progressBar.visible() },
-                    onStopLoading = {
-                        dataBinding.progressBar.gone()
-                    },
+                    onStopLoading = { dataBinding.progressBar.gone() },
                     onSuccess = {
-                        navigateToProfile()
+                        initAdapter()
                     },
                     onFailure = { message ->
-                        toast(message?:"Something went wrong!")
+                        toast(message ?: "Something went wrong!")
                     }
                 )
             }
         }
     }
 
+    private fun initAdapter(){
+
+    }
+
     private fun navigateToProfile() = lifecycleScope.launchWhenResumed {
         crossNavigate(NavigationFlow.ProfileFlow)
     }
 
-    fun test(){
+    fun test() {
 
     }
 

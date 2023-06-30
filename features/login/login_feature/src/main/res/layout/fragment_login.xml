@@ -5,12 +5,6 @@
 
     <data>
         <import type="com.ashkan.userprofile.R.color" />
-
-        <import type="kotlin.jvm.functions.Function0" />
-        <import type="kotlin.Unit" />
-        <variable
-            name="submit"
-            type="Function0&lt;Unit>" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp"
-            android:textColor="@color/303fff"
+            android:textColor="@color/_303fff"
             android:text="All Users"/>
 
         <androidx.recyclerview.widget.RecyclerView
