@@ -8,6 +8,7 @@ import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 import com.ashkan.userprofile.features.login.login_feature.base.StandardCoroutineRule
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.advanceUntilIdle
 import org.junit.Rule
@@ -26,8 +27,7 @@ class LoginRepositoryImplTest {
     private val apiService: LoginApiService = mock()
     private val userDao: UserDao = mock()
     private val repositoryImpl = LoginRepositoryImpl(apiService, userDao)
-
-    private val userList: List<LoginResponseModel> = mock()
+    private val loginResponseModel = LoginResponseModel(1, "test", "test")
 
     @Test
     fun `verify repository hits api`() = testCoroutineRule.runTest{
@@ -39,9 +39,16 @@ class LoginRepositoryImplTest {
     @Test
     fun `api returns empty list`() = testCoroutineRule.runTest{
         whenever(apiService.getAllUsers()).thenReturn(emptyList())
-        val users = repositoryImpl.getAllUsers()
-        advanceUntilIdle()
+        repositoryImpl.getAllUsers().collect{ // because flow is cold, we have to collect it to get response.
+            assertEquals(emptyList<LoginResponse>(), it.getOrNull())
+        }
+    }
 
-        assertEquals(emptyList<LoginResponse>(), users.first().getOrNull())
+    @Test
+    fun `api returns user list`() = testCoroutineRule.runTest{
+        whenever(apiService.getAllUsers()).thenReturn(listOf(loginResponseModel))
+        repositoryImpl.getAllUsers().collectLatest {
+            assertEquals(listOf(loginResponseModel).map { it.toDomain() }, it.getOrNull())
+        }
     }
 }
