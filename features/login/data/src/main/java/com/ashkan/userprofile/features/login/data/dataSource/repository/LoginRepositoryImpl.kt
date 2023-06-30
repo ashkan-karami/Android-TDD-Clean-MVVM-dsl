@@ -18,16 +18,16 @@ class LoginRepositoryImpl @Inject constructor(
     private val userDao: UserDao
 ) : LoginRepository {
 
-    override suspend fun startLogin(userName: String, password: String): Flow<Result<LoginResponse>> {
-        val apiResult = apiWrapper<LoginResponseModel,LoginResponse>{
+    override suspend fun startLogin(userName: String, password: String): Flow<Result<List<LoginResponse>>> {
+        return apiWrapper<List<LoginResponseModel>,List<LoginResponse>>{
             apiService.startLogin()
         }
-        return if (apiResult.firstOrNull()?.isSuccess == true){
-            updateUsers(apiResult.firstOrNull()?.getOrNull())
-            apiResult
-        }else{
-            flow { emit(Result.success(userDao.getUserById(1).toDomainModel())) }
-        }
+//        return if (apiResult.firstOrNull()?.isSuccess == true){
+//            updateUsers(apiResult.firstOrNull()?.getOrNull())
+//            apiResult
+//        }else{
+//            flow { emit(Result.success(userDao.getUserById(1).toDomainModel())) }
+//        }
     }
 
     private suspend fun updateUsers(users: LoginResponse?){

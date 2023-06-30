@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface LoginApiService {
 
-    @GET("users/1")
-    suspend fun startLogin(): LoginResponseModel
+    @GET("users")
+    suspend fun startLogin(): List<LoginResponseModel>
 }

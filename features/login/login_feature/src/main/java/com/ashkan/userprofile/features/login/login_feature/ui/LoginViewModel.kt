@@ -19,7 +19,7 @@ class LoginViewModel @Inject constructor(): ViewModel() {
     @Inject
     lateinit var loginUseCase: LoginUseCase
 
-    private var _profileFlow = MutableStateFlow<UiState<LoginResponse>>(UiState.None())
+    private var _profileFlow = MutableStateFlow<UiState<List<LoginResponse>>>(UiState.None())
     val profileFlow = _profileFlow.asStateFlow()
 
     init {

@@ -4,6 +4,8 @@
     xmlns:ui="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.ashkan.userprofile.R.color" />
+
         <import type="kotlin.jvm.functions.Function0" />
         <import type="kotlin.Unit" />
         <variable
@@ -13,61 +15,55 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/f4f303">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/303fff"
+            android:text="All Users"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <TextView
-            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:gravity="center"
-            android:text="Hello from LoginFragmentBinding!!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:background="@color/fff000"
+            ui:listitem="@layout/adapter_user_item"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="@id/guideStart"
             app:layout_constraintEnd_toEndOf="@id/guideEnd"
-            app:layout_constraintBottom_toTopOf="@id/button"/>
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/guideStart"
-            app:layout_constraintEnd_toEndOf="@id/guideEnd"
-            android:layout_marginBottom="32dp"
-            ui:click="@{submit}"
-            android:text="Next"
-            android:textColor="#FFF"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="32dp" />
+            app:layout_constraintGuide_begin="16dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="32dp" />
+            app:layout_constraintGuide_end="16dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
