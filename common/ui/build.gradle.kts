@@ -31,7 +31,7 @@ android {
 
 dependencies {
 
-    implementation(project(":common:network"))
+    api(project(":common:network"))
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
     implementation(Libs.material)

@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ashkan.userprofile.common.base_domain.baseUseCase.UseCase
 import com.ashkan.userprofile.common.ui.UiState
-import com.ashkan.userprofile.common.ui.log
 import com.ashkan.userprofile.common.ui.toUiState
 import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 import com.ashkan.userprofile.features.login.domain.usecase.LoginUseCase
@@ -20,9 +19,8 @@ class LoginViewModel @Inject constructor(): ViewModel() {
     @Inject
     lateinit var loginUseCase: LoginUseCase
 
-    private var _profileFlow = MutableStateFlow<UiState<List<LoginResponse>>>(UiState.None())
-    val profileFlow = _profileFlow.asStateFlow()
-    var userList: List<LoginResponse> = mutableListOf()
+    private var _userListFlow = MutableStateFlow<UiState<List<LoginResponse>>>(UiState.None())
+    val userListFlow = _userListFlow.asStateFlow()
 
     init {
         LoginComponent.instance?.inject(this@LoginViewModel)
@@ -32,12 +30,9 @@ class LoginViewModel @Inject constructor(): ViewModel() {
         loginUseCase.invoke(
             UseCase.NoParam
         ).onStart {
-            _profileFlow.emit(UiState.Loading())
+            _userListFlow.emit(UiState.Loading())
         }.collect {
-            it.onSuccess { users ->
-                userList = users
-            }
-            _profileFlow.emit(it.toUiState())
+            _userListFlow.emit(it.toUiState())
         }
     }
 }

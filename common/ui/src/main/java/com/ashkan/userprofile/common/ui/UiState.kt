@@ -87,3 +87,7 @@ fun <T, R> Result<T>.toUiState(action: (T?) -> R?): UiState<R> {
         }
     }
 }
+
+fun <T> UiState<T>.data(): T? = if (this is UiState.Data) this.data else null
+
+fun <T> UiState<T>.exception(): Throwable? = if (this is UiState.Error) this.exceptions else null

@@ -6,9 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.ashkan.userprofile.common.navigation.NavigationFlow
 import com.ashkan.userprofile.common.navigation.crossNavigate
-import com.ashkan.userprofile.common.ui.BaseFragment
-import com.ashkan.userprofile.common.ui.foldResponse
-import com.ashkan.userprofile.common.ui.toast
+import com.ashkan.userprofile.common.ui.*
 import com.ashkan.userprofile.di.DaggerDependencies
 import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 import com.ashkan.userprofile.features.login.login_feature.R
@@ -35,7 +33,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 
     override fun bind(savedInstanceState: Bundle?) {
         dataBinding.lifecycleOwner = viewLifecycleOwner
-        if (viewModel.userList.isEmpty()) {
+        if (viewModel.userListFlow.value.data().isNullOrEmpty()) {
             viewModel.startLogin()
         }else{
             initAdapter()
@@ -61,7 +59,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 
     private fun collectViewModel() {
         lifecycleScope.launch {
-            viewModel.profileFlow.collect {
+            viewModel.userListFlow.collect {
                 it.foldResponse(
                     requireContext(),
                     onLoading = { dataBinding.progressBar.visible() },
@@ -85,7 +83,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
         }
 
         recycler.adapter = adapter
-        adapter.setData(viewModel.userList)
+        viewModel.userListFlow.value.data()?.let {
+            adapter.setData(it)
+        }
     }
 
     private fun navigateToProfile(user: LoginResponse) = lifecycleScope.launchWhenResumed {

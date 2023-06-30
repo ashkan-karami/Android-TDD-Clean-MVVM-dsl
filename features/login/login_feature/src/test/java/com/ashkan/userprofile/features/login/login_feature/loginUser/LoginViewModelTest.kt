@@ -1,6 +1,9 @@
 package com.ashkan.userprofile.features.login.login_feature.loginUser
 
 import com.ashkan.userprofile.common.base_domain.baseUseCase.UseCase
+import com.ashkan.userprofile.common.network.NetworkExceptions
+import com.ashkan.userprofile.common.ui.data
+import com.ashkan.userprofile.common.ui.exception
 import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 import com.ashkan.userprofile.features.login.domain.usecase.LoginUseCase
 import com.ashkan.userprofile.features.login.login_feature.base.StandardCoroutineRule
@@ -8,7 +11,6 @@ import com.ashkan.userprofile.features.login.login_feature.ui.LoginViewModel
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.test.advanceTimeBy
 import kotlinx.coroutines.test.advanceUntilIdle
 import org.junit.Rule
 import org.junit.Test
@@ -27,6 +29,9 @@ class LoginViewModelTest {
     private val loginUseCase: LoginUseCase = mock()
     private val userList: List<LoginResponse> = mock()
     private val params = UseCase.NoParam
+    private val throwable: Throwable = mock()
+    private val timeOutMessage = "Couldn't connect to the serve!"
+    private val networkException: Throwable = NetworkExceptions.TimeOutException(timeOutMessage, throwable)
 
     @Test
     fun `users api returns emptyList`() = testCoroutineRule.runTest{
@@ -35,7 +40,7 @@ class LoginViewModelTest {
         viewModel.startLogin()
         advanceUntilIdle()
 
-        assertEquals(emptyList<LoginResponse>(), viewModel.userList)
+        assertEquals(emptyList<LoginResponse>(), viewModel.userListFlow.value.data())
         verify(loginUseCase, times(1)).invoke(params)
     }
 
@@ -46,6 +51,16 @@ class LoginViewModelTest {
         viewModel.startLogin()
         advanceUntilIdle()
 
-        assertEquals(userList, viewModel.userList)
+        assertEquals(userList, viewModel.userListFlow.value.data())
+    }
+
+    @Test
+    fun `users api fails`() = testCoroutineRule.runTest{
+        whenever(loginUseCase.invoke(params)).thenReturn( flow { emit(Result.failure(networkException)) })
+        viewModel.loginUseCase = loginUseCase
+        viewModel.startLogin()
+        advanceUntilIdle()
+
+        assertEquals(timeOutMessage, viewModel.userListFlow.value.exception()?.message)
     }
 }
