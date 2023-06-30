@@ -27,6 +27,7 @@ class LoginRepositoryImplTest {
     private val apiService: LoginApiService = mock()
     private val userDao: UserDao = mock()
     private val repositoryImpl = LoginRepositoryImpl(apiService, userDao)
+    // when mocking LoginResponseModel, function toDomain() can't be called, therefore, we create a real object.
     private val loginResponseModel = LoginResponseModel(1, "test", "test")
 
     @Test
@@ -47,8 +48,8 @@ class LoginRepositoryImplTest {
     @Test
     fun `api returns user list`() = testCoroutineRule.runTest{
         whenever(apiService.getAllUsers()).thenReturn(listOf(loginResponseModel))
-        repositoryImpl.getAllUsers().collectLatest {
-            assertEquals(listOf(loginResponseModel).map { it.toDomain() }, it.getOrNull())
+        repositoryImpl.getAllUsers().collectLatest { result ->
+            assertEquals(listOf(loginResponseModel).map { it.toDomain() }, result.getOrNull())
         }
     }
 }
