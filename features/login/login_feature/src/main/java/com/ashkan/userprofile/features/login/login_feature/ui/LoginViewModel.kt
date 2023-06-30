@@ -2,6 +2,7 @@ package com.ashkan.userprofile.features.login.login_feature.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ashkan.userprofile.common.base_domain.baseUseCase.UseCase
 import com.ashkan.userprofile.common.ui.UiState
 import com.ashkan.userprofile.common.ui.toUiState
 import com.ashkan.userprofile.features.login.domain.data.LoginResponse
@@ -28,10 +29,7 @@ class LoginViewModel @Inject constructor(): ViewModel() {
 
     fun startLogin() = viewModelScope.launch {
         loginUseCase.invoke(
-            LoginUseCase.Params(
-                userName = "ashkan",
-                password = "ashkan12345"
-            )
+            UseCase.NoParam
         ).onStart {
             _profileFlow.emit(UiState.Loading())
         }.collect {

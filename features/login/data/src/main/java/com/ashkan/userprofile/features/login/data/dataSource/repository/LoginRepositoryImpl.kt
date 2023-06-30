@@ -18,7 +18,7 @@ class LoginRepositoryImpl @Inject constructor(
     private val userDao: UserDao
 ) : LoginRepository {
 
-    override suspend fun startLogin(userName: String, password: String): Flow<Result<List<LoginResponse>>> {
+    override suspend fun startLogin(): Flow<Result<List<LoginResponse>>> {
         return apiWrapper<List<LoginResponseModel>,List<LoginResponse>>{
             apiService.startLogin()
         }

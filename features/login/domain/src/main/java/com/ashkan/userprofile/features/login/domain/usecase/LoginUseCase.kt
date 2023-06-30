@@ -9,16 +9,8 @@ import javax.inject.Inject
 
 class LoginUseCase @Inject constructor(
     private val repository: LoginRepository
-): BaseFlowUseCase<LoginUseCase.Params, List<LoginResponse>>() {
+): BaseFlowUseCase<UseCase.NoParam, List<LoginResponse>>() {
 
-    class Params(
-        val userName: String,
-        val password: String
-    ): UseCase.Param
-
-    override suspend fun execute(param: Params): Flow<Result<List<LoginResponse>>> =
-        repository.startLogin(
-            userName = param.userName,
-            password = param.password
-        )
+    override suspend fun execute(param: UseCase.NoParam): Flow<Result<List<LoginResponse>>> =
+        repository.startLogin()
 }
