@@ -44,6 +44,10 @@ dependencies {
     kapt(Kapt.room)
 
     testImplementation(TestLibs.junit)
+    testImplementation(TestLibs.coroutines)
+    testImplementation(TestLibs.mockito)
+    testImplementation(TestLibs.mockitoKotlin)
+    testImplementation(TestLibs.mockitoInline)
 
     debugImplementation(DebugLibs.fragmentTesting)
 

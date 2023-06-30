@@ -49,6 +49,7 @@ object TestLibs{
     const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockito}"
     const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTesting}"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
+    const val testRule = "androidx.test:rules:${Versions.testRule}"
 }
 
 object DebugLibs{

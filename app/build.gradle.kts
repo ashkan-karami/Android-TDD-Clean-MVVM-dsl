@@ -107,14 +107,15 @@ dependencies {
     testImplementation(TestLibs.mockitoInline)
     testImplementation(TestLibs.coreTesting)
     testImplementation(TestLibs.coroutines)
+    //testImplementation(TestLibs.testRule)
 
     androidTestImplementation(AndroidTestLibs.testRunner)
-    androidTestImplementation(AndroidTestLibs.testRule)
+    //androidTestImplementation(AndroidTestLibs.testRule)
     androidTestImplementation(AndroidTestLibs.extJunit)
     androidTestImplementation(AndroidTestLibs.extJunitKtx)
     androidTestImplementation(AndroidTestLibs.espresso)
-    androidTestImplementation(AndroidTestLibs.barista) {
-        exclude(group = "org.jetbrains.kotlin")
-        exclude(group = "androidx.legacy", module= "legacy-support-core-utils")
-    }
+//    androidTestImplementation(AndroidTestLibs.barista) {
+//        exclude(group = "org.jetbrains.kotlin")
+//        exclude(group = "androidx.legacy", module= "legacy-support-core-utils")
+//    }
 }

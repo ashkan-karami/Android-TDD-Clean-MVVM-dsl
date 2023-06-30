@@ -38,7 +38,7 @@ object Versions{
     const val fragmentTesting = "1.5.7"
 
     //androidTestImplementation
-    const val testRunner = "1.5.2"
+    const val testRunner = "1.5.1"
     const val testRule = "1.5.2"
     const val extJunit = "1.1.5"
     const val espresso = "3.5.1"
