@@ -10,6 +10,7 @@ import com.ashkan.userprofile.common.ui.BaseFragment
 import com.ashkan.userprofile.common.ui.foldResponse
 import com.ashkan.userprofile.common.ui.toast
 import com.ashkan.userprofile.di.DaggerDependencies
+import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 import com.ashkan.userprofile.features.login.login_feature.R
 import com.ashkan.userprofile.features.login.login_feature.databinding.FragmentLoginBinding
 import com.ashkan.userprofile.features.login.login_feature.di.DaggerLoginComponent
@@ -24,6 +25,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 
     private val viewModel by viewModels<LoginViewModel>()
 
+    private lateinit var adapter: LoginUserAdapter
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         inject()
@@ -32,8 +35,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 
     override fun bind(savedInstanceState: Bundle?) {
         dataBinding.lifecycleOwner = viewLifecycleOwner
-        if (viewModel.userList.isEmpty())
+        if (viewModel.userList.isEmpty()) {
             viewModel.startLogin()
+        }else{
+            initAdapter()
+        }
     }
 
     private fun inject() {
@@ -71,11 +77,18 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
         }
     }
 
-    private fun initAdapter(){
+    private fun initAdapter() = with(dataBinding){
+        if (!::adapter.isInitialized){
+            adapter = LoginUserAdapter {
+                navigateToProfile(it)
+            }
+        }
 
+        recycler.adapter = adapter
+        adapter.setData(viewModel.userList)
     }
 
-    private fun navigateToProfile() = lifecycleScope.launchWhenResumed {
+    private fun navigateToProfile(user: LoginResponse) = lifecycleScope.launchWhenResumed {
         crossNavigate(NavigationFlow.ProfileFlow)
     }
 

@@ -9,10 +9,12 @@ import com.ashkan.userprofile.features.login.domain.data.LoginResponse
 data class UserEntity(
     @PrimaryKey(autoGenerate = true) var primaryKey: Int = 1,
     @ColumnInfo(name = "id") val id: Int,
-    @ColumnInfo(name = "name") val name: String
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "email") val email: String
 )
 
 internal fun UserEntity.toDomainModel() = LoginResponse(
     id = id,
-    name = name
+    name = name,
+    email = email
 )

@@ -32,7 +32,7 @@ class LoginRepositoryImpl @Inject constructor(
 
     private suspend fun updateUsers(users: LoginResponse?){
         users?.let {
-            userDao.insert(UserEntity(id = it.id, name = it.name))
+            userDao.insert(UserEntity(id = it.id, name = it.name, email = it.email))
         }
     }
 }

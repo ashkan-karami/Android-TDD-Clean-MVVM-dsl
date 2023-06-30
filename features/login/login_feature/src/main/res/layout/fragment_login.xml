@@ -30,6 +30,7 @@
             android:layout_marginTop="16dp"
             android:background="@color/fff000"
             ui:listitem="@layout/adapter_user_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

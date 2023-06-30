@@ -9,11 +9,14 @@ data class LoginResponseModel(
     val id: Int,
     @Json(name = "name")
     val name: String,
+    @Json(name = "email")
+    val email: String,
 ): EntityModel<LoginResponse>{
 
     override fun toDomain(): LoginResponse =
         LoginResponse(
             id = id,
-            name = name
+            name = name,
+            email = email
         )
 }

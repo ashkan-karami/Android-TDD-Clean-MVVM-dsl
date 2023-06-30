@@ -15,6 +15,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
@@ -36,7 +37,7 @@
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor='@{color._303fff}'
+            android:textColor="@color/_303fff"
             android:textSize="16sp"
             app:layout_constraintTop_toTopOf="@id/icon"
             app:layout_constraintStart_toEndOf="@id/icon"
@@ -54,7 +55,7 @@
             android:id="@+id/email"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor='@{color._303fff}'
+            android:textColor="@color/_303fff"
             android:textSize="12sp"
             android:alpha="0.7"
             android:text="Fake email.com"
@@ -73,7 +74,7 @@
             app:layout_constraintTop_toBottomOf="@id/email"
             app:layout_constraintStart_toStartOf="@id/email"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background='@{color.f4f303}'
+            android:background="@color/f4f303"
             android:layout_marginTop="8dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
