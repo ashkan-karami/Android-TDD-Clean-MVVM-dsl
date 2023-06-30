@@ -34,7 +34,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
     override fun bind(savedInstanceState: Bundle?) {
         dataBinding.lifecycleOwner = viewLifecycleOwner
         if (viewModel.userListFlow.value.data().isNullOrEmpty()) {
-            viewModel.startLogin()
+            viewModel.getAllUsers()
         }else{
             initAdapter()
         }

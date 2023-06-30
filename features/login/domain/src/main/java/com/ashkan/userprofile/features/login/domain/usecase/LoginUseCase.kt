@@ -12,5 +12,5 @@ class LoginUseCase @Inject constructor(
 ): BaseFlowUseCase<UseCase.NoParam, List<LoginResponse>>() {
 
     override suspend fun execute(param: UseCase.NoParam): Flow<Result<List<LoginResponse>>> =
-        repository.startLogin()
+        repository.getAllUsers()
 }

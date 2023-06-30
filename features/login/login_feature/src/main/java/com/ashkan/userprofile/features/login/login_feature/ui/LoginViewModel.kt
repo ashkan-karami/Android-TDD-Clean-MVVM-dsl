@@ -26,7 +26,7 @@ class LoginViewModel @Inject constructor(): ViewModel() {
         LoginComponent.instance?.inject(this@LoginViewModel)
     }
 
-    fun startLogin() = viewModelScope.launch {
+    fun getAllUsers() = viewModelScope.launch {
         loginUseCase.invoke(
             UseCase.NoParam
         ).onStart {
