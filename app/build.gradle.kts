@@ -46,6 +46,9 @@ android {
             jvmTarget = "17"
         }
     }
+    tasks.withType<Test> {
+        useJUnitPlatform() // Make all tests use JUnit 5
+    }
     dynamicFeatures += setOf(Features.profileFeature, Features.loginFeature)
 }
 
@@ -114,6 +117,7 @@ dependencies {
     androidTestImplementation(AndroidTestLibs.extJunit)
     androidTestImplementation(AndroidTestLibs.testRunner)
     androidTestImplementation(AndroidTestLibs.espresso)
+    androidTestImplementation(AndroidTestLibs.fragmentTesting)
     //androidTestImplementation(AndroidTestLibs.testRule)
     //androidTestImplementation(AndroidTestLibs.extJunitKtx)
 //    androidTestImplementation(AndroidTestLibs.barista) {

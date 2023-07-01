@@ -35,7 +35,7 @@ object Versions{
     const val coreTesting = "2.1.0"
 
     // debugImplementation
-    const val fragmentTesting = "1.5.7"
+    const val fragmentTesting = "1.6.0-alpha04"
 
     //androidTestImplementation
     const val testRunner = "1.5.1"

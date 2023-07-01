@@ -54,7 +54,7 @@ object TestLibs{
 
 object DebugLibs{
     const val chucker = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
-    const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTesting}"
+    const val fragmentTesting = "androidx.fragment:fragment-testing-manifest:${Versions.fragmentTesting}"
 }
 
 object releaseLibs{
@@ -69,6 +69,7 @@ object AndroidTestLibs{
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     const val barista = "com.adevinta.android:barista:${Versions.barista}"
     const val annotation = "androidx.annotation:annotation:${Versions.annotation}"
+    const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTesting}"
 }
 
 object Kapt{
