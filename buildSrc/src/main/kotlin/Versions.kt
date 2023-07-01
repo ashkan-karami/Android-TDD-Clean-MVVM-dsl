@@ -1,7 +1,7 @@
 object Versions{
     //app level
-    const val kotlin = "1.6.21"
-    const val android = "7.1.2"
+    const val kotlin = "1.8.21"
+    const val android = "8.0.0"
 
     //libs
     const val coreKtx = "1.9.0"

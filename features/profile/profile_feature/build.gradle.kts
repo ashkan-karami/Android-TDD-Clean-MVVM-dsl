@@ -3,6 +3,7 @@ plugins {
     kotlin(Plugins.android)
 }
 android {
+    namespace = "com.ashkan.userprofile.profile_feature"
     compileSdk = AppConfig.compileSdk
 
     defaultConfig {
@@ -18,6 +19,13 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 

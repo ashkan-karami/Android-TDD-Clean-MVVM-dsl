@@ -7,12 +7,11 @@ plugins {
 }
 
 android {
+    namespace = AppConfig.applicationId
     compileSdk = AppConfig.compileSdk
 
     defaultConfig {
-        configurations.all {
-            resolutionStrategy { force(Libs.coreKtx) }
-        }
+
         applicationId = AppConfig.applicationId
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
@@ -38,11 +37,11 @@ android {
         dataBinding = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     dynamicFeatures += setOf(Features.profileFeature, Features.loginFeature)
 }
@@ -109,11 +108,11 @@ dependencies {
     testImplementation(TestLibs.coroutines)
     //testImplementation(TestLibs.testRule)
 
-    androidTestImplementation(AndroidTestLibs.testRunner)
-    //androidTestImplementation(AndroidTestLibs.testRule)
     androidTestImplementation(AndroidTestLibs.extJunit)
-    androidTestImplementation(AndroidTestLibs.extJunitKtx)
+    androidTestImplementation(AndroidTestLibs.testRunner)
     androidTestImplementation(AndroidTestLibs.espresso)
+    //androidTestImplementation(AndroidTestLibs.testRule)
+    //androidTestImplementation(AndroidTestLibs.extJunitKtx)
 //    androidTestImplementation(AndroidTestLibs.barista) {
 //        exclude(group = "org.jetbrains.kotlin")
 //        exclude(group = "androidx.legacy", module= "legacy-support-core-utils")

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidTestResultsUserPreferences">
+    <option name="androidTestResultsTableState">
+      <map>
+        <entry key="702249344">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="HD2615P000236" value="120" />
+                  <entry key="Pixel_3_XL_API_31" value="120" />
+                  <entry key="RZ8MA35JGDD" value="120" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Topwise&#13;&#10; MP35P" value="120" />
+                  <entry key="samsung&#10; SM-A505F" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
