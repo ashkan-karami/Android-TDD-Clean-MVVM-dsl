@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11">
+    <bytecodeTargetLevel target="17">
       <module name="TDD-Clean-MVVM-dsl.buildSrc" target="11" />
       <module name="TDD-Clean-MVVM-dsl.buildSrc.main" target="11" />
       <module name="TDD-Clean-MVVM-dsl.buildSrc.test" target="11" />
-      <module name="UserProfile.app" target="17" />
-      <module name="UserProfile.buildSrc" target="17" />
-      <module name="UserProfile.buildSrc.main" target="17" />
-      <module name="UserProfile.buildSrc.test" target="17" />
-      <module name="UserProfile.common.base_domain" target="17" />
-      <module name="UserProfile.common.base_domain.main" target="17" />
-      <module name="UserProfile.common.base_domain.test" target="17" />
-      <module name="UserProfile.common.core" target="17" />
-      <module name="UserProfile.common.navigation" target="17" />
-      <module name="UserProfile.common.network" target="17" />
-      <module name="UserProfile.common.ui" target="17" />
       <module name="UserProfile.data" target="11" />
       <module name="UserProfile.domain" target="11" />
       <module name="UserProfile.domain.main" target="11" />
       <module name="UserProfile.domain.test" target="11" />
-      <module name="UserProfile.features.login.data" target="17" />
-      <module name="UserProfile.features.login.domain" target="17" />
-      <module name="UserProfile.features.login.domain.main" target="17" />
-      <module name="UserProfile.features.login.domain.test" target="17" />
-      <module name="UserProfile.features.login.login_feature" target="17" />
-      <module name="UserProfile.features.profile.data" target="17" />
-      <module name="UserProfile.features.profile.profile_feature" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
