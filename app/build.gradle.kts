@@ -105,6 +105,7 @@ dependencies {
     releaseImplementation(releaseLibs.chuckerNoOp)
 
     debugImplementation(DebugLibs.fragmentTesting) // FragmentScenario for empty activity
+    debugImplementation(DebugLibs.fragmentKtx)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.mockito)

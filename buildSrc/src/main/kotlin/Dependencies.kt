@@ -54,7 +54,8 @@ object TestLibs{
 
 object DebugLibs{
     const val chucker = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
-    const val fragmentTesting = "androidx.fragment:fragment-testing-manifest:${Versions.fragmentTesting}"
+    const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTesting}"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentTesting}"
 }
 
 object releaseLibs{

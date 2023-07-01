@@ -51,8 +51,10 @@ dependencies {
     testImplementation(TestLibs.mockitoInline)
 
     debugImplementation(DebugLibs.fragmentTesting)
+    debugImplementation(DebugLibs.fragmentKtx)
 
     androidTestImplementation(AndroidTestLibs.extJunit)
     androidTestImplementation(AndroidTestLibs.espresso)
     androidTestImplementation(AndroidTestLibs.testRunner)
+    androidTestImplementation(AndroidTestLibs.fragmentTesting)
 }
